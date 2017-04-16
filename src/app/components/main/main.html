@@ -1,30 +1,11 @@
 <div class="c-main">
 
-  <!-- Organize our entries in blocks -->
-  
+  <!-- Organize our entries in blocks from the first page -->
   <div class="c-main__entry"
     ng-repeat="entry in $ctrl.sayonaraSite.pages[0].entryTypes[0].entries | orderBy: '-date'">
-    <div class="c-main__entry__title-container">
-      <h1 class="c-main__entry__title-container__title"
-        ng-click="$ctrl.goToEntry(entry)">
-        {{entry.title}}
-      </h1>
-    </div>
-
-    <div class="c-main__entry__content animated fadeIn"
-      ng-bind-html="$ctrl.$sce.trustAsHtml(entry.content)">
-    </div>
-
-    <div class="c-main__entry__divider">
-    </div>
-
-    <div class="c-main__entry__date">
-      {{entry.date | date:'longDate'}}
-    </div>
-
-    <div class="c-main__entry__read-more"
-      ng-click="$ctrl.goToEntry(entry)">
-      Read more...
-    </div>
+    {{entry}}
+    <img class="c-main__entry__image"
+    alt="{{entry.title}}"
+    ng-src="{{$ctrl.getEntryImageSource(entry)}}" />
   </div>
 </div>

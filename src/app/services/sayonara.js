@@ -26,9 +26,9 @@ class Sayonara {
       method: 'GET',
       url: sayonaraUrlHost + sayonaraUrlPath
     }).then(response => {
-    // this callback will be called asynchronously
-    // when the response is available
-      this.$log.debug('Sayonara Response: ', response.data);
+      // this callback will be called asynchronously
+      // when the response is available
+      // this.$log.debug('Sayonara Response: ', response.data);
       this.sayonaraSite = response.data;
     }, response => {
       // called asynchronously if an error occurs

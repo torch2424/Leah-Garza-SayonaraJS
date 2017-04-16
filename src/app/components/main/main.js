@@ -22,6 +22,24 @@ class MainController {
   goToEntry(entry) {
     this.$location.path('/entry/' + entry.title);
   }
+
+  getEntryImageSource(entry) {
+    // Get the first custom field if there is one
+    if (!entry ||
+      !entry.customFields ||
+      entry.customFields.length <= 0 ||
+      !entry.customFields[0].fields ||
+      entry.customFields[0].fields.length <= 0) {
+      return false;
+    }
+    const customField = entry.customFields[0].fields[0];
+
+    // Check if it contains imgur
+    if (customField.includes('imgur')) {
+      // Return the small image as the background style
+      return customField;
+    }
+  }
 }
 
 export const main = {
