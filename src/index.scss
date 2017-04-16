@@ -1,0 +1,45 @@
+/* Import our fonts (from google Fonts) */
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans|Open+Sans|Roboto|Source+Sans+Pro|Ubuntu');
+
+/* Import global styles */
+@import 'styles/variables';
+@import 'styles/mediaQuery';
+@import 'styles/bem';
+@import 'styles/animate';
+@import 'styles/quill';
+
+/* Import module styles */
+@import 'modules/navbar/navbar';
+@import 'app/components/main/main';
+@import 'app/components/entry/entry';
+
+/* Global general styles */
+body {
+  margin: 0px;
+}
+
+html {
+  background-color: $paper;
+}
+
+* {
+    font-family: 'Roboto','Open Sans', 'Source Sans Pro', 'Droid Sans', 'Ubuntu', sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+.app-page-content {
+
+}
+
+.app-container {
+  margin-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
