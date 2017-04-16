@@ -9,7 +9,6 @@
 @import 'styles/quill';
 
 /* Import module styles */
-@import 'modules/navbar/navbar';
 @import 'app/components/main/main';
 @import 'app/components/entry/entry';
 
@@ -43,3 +42,6 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* Import Nav bar, to allow extending the container */
+@import 'modules/navbar/navbar';

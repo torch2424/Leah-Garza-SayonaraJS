@@ -10,6 +10,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       component: 'app'
     })
+    .state('page', {
+      url: '/page/:title',
+      component: 'page'
+    })
     .state('entry', {
       url: '/entry/:title',
       component: 'entry'
