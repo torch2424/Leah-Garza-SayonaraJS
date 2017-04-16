@@ -35,7 +35,7 @@ angular
     });
 
     // Set up our nav
-    navbarRouteService.enableAlwaysDesktop();
+    // navbarRouteService.enableAlwaysDesktop();
   })
   .component('app', main)
   .component('entry', entry);

@@ -1,6 +1,7 @@
 <div class="c-entry">
 
   <div class="c-entry__page-content"
+    ng-if="$ctrl.sayonaraSite.pages[0].content"
     ng-bind-html="$ctrl.$sce.trustAsHtml($ctrl.sayonaraSite.pages[0].content)">
   </div>
 

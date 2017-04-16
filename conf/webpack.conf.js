@@ -52,7 +52,7 @@ module.exports = {
     FailPlugin,
     new webpack.DefinePlugin({
       PRODUCTION: JSON.stringify(false),
-      API_URL: JSON.stringify('https://blog.aaronthedev.com')
+      API_URL: JSON.stringify('http://localhost:8000')
     }),
     new HtmlWebpackPlugin({
       template: conf.path.src('index.html')
