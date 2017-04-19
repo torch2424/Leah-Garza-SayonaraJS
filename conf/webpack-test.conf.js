@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+
 module.exports = {
   module: {
     loaders: [
@@ -21,6 +22,11 @@ module.exports = {
           'ng-annotate-loader',
           'babel-loader'
         ]
+      },
+      {
+        test: /\.(png|jpg)$/,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=8192'
       },
       {
         test: /\.html$/,

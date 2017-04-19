@@ -1,11 +1,28 @@
 <div class="c-main">
+  <!-- Play button Overlay -->
+  <img class="c-main__entry__image--play-button"
+  alt="Play Button"
+  src="{{$ctrl.playButtonImage}}" />
 
   <!-- Organize our entries in blocks from the first page -->
   <div class="c-main__entry"
     ng-repeat="entry in $ctrl.sayonaraSite.pages[0].entryTypes[0].entries | orderBy: '-date'">
-    {{entry}}
+    <!-- Background Image -->
     <img class="c-main__entry__image"
     alt="{{entry.title}}"
     ng-src="{{$ctrl.getEntryImageSource(entry)}}" />
+
+    <!-- Play button Overlay -->
+    <img class="c-main__entry__image--play-button"
+    alt="Play Button"
+    src="{{$ctrl.playButtonImage}}" />
+
+    <!-- Overlay on hover -->
+    <div class="c-main__entry__overlay"
+    ng-click="$ctrl.goToEntry(entry)">
+      <h3 class="c-main__entry__overlay__title">
+        {{entry.title}}
+      </h3>
+    </div>
   </div>
 </div>

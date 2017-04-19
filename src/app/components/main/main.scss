@@ -1,8 +1,56 @@
 .c-main {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
   @include element('entry') {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    margin: 10px;
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+
+    @include element('image') {
+      z-index: 0;
+      width: 100%;
+      height: auto;
+      min-width: 250px;
+      min-height: 250px;
+      object-fit: cover;
+
+      @include modifier('play-button') {
+        z-index: 1;
+        width: 100%;
+        height: auto;
+        min-width: 250px;
+        min-height: 250px;
+        object-fit: contain;
+      }
+    }
+
+    @include element('overlay') {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      width: 250px;
+      height: 250px;
+      z-index: 2;
+      background-color: $transparent-50;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 0.5s;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      @include element('title') {
+        color: $inverse;
+      }
+    }
   }
 }

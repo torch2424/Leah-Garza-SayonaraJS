@@ -39,6 +39,11 @@ module.exports = {
         ]
       },
       {
+        test: /\.(png|jpg)$/,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=8192'
+      },
+      {
         test: /\.html$/,
         loaders: [
           'html-loader'

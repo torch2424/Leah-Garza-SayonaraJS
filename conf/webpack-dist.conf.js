@@ -31,6 +31,11 @@ module.exports = {
         })
       },
       {
+        test: /\.(png|jpg)$/,
+        exclude: /node_modules/,
+        loader: 'url-loader?limit=8192'
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         loaders: [
@@ -41,7 +46,9 @@ module.exports = {
       {
         test: /\.html$/,
         loaders: [
-          'html-loader'
+          'html-loader?' + JSON.stringify({
+            attrs: ['img:src', 'img:ng-src']
+          })
         ]
       }
     ]
