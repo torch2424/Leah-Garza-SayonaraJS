@@ -21,6 +21,11 @@
       object-fit: cover;
 
       @include modifier('play-button') {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: .5;
+
         z-index: 1;
         width: 100%;
         height: auto;
@@ -50,6 +55,7 @@
 
       @include element('title') {
         color: $inverse;
+        font-family: 'Indie Flower', cursive, Arial, Helvetica, sans-serif;
       }
     }
   }

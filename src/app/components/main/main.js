@@ -1,4 +1,4 @@
-import playButtonImg from '../../images/playButtonLarge.png';
+import playButtonImg from '../../images/playButton.svg';
 
 class MainController {
   /** @ngInject */
@@ -23,10 +23,30 @@ class MainController {
     });
   }
 
+  /**
+   * Ng-click to navigate to entry
+   */
   goToEntry(entry) {
     this.$location.path('/entry/' + entry.title);
   }
 
+  /**
+   * Function to return if an entry is a video
+   */
+  isVideo(entry) {
+    // Find the first field in any filled custom field
+    const field = this._getEntryField(entry);
+
+    if (!field) {
+      return field;
+    }
+
+    return field.includes('youtu');
+  }
+
+  /**
+   * Function to find the correct image for our main gallery
+   */
   getEntryImageSource(entry) {
     // Get the first custom field if there is one
     if (!entry ||
@@ -36,14 +56,7 @@ class MainController {
     }
 
     // Find the first field in any filled custom field
-    let field = false;
-    entry.customFields.some(customField => {
-      if (customField.fields && customField.fields[0].length > 0) {
-        field = customField.fields[0];
-        return true;
-      }
-      return false;
-    });
+    const field = this._getEntryField(entry);
 
     if (!field) {
       return field;
@@ -67,6 +80,23 @@ class MainController {
       const videoId = (match && match[7].length === 11) ? match[7] : false;
       return 'https://img.youtube.com/vi/' + videoId + '/0.jpg';
     }
+  }
+
+  /**
+   * Private Function to grab the first filed of an entry
+   */
+  _getEntryField(entry) {
+    // Find the first field in any filled custom field
+    let field = false;
+    entry.customFields.some(customField => {
+      if (customField.fields && customField.fields[0].length > 0) {
+        field = customField.fields[0];
+        return true;
+      }
+      return false;
+    });
+
+    return field;
   }
 }
 
