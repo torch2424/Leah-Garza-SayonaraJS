@@ -21,6 +21,8 @@
       padding-bottom: 5px;
       padding-left: 10px;
       padding-right: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
       cursor: pointer;
       transition: background-color 0.5s;
 
@@ -45,7 +47,6 @@
     border-radius: 5px;
     position: relative;
     cursor: pointer;
-    z-index: 1px;
 
     @include element('image') {
       z-index: 0;

@@ -10,9 +10,11 @@
     <div class="c-entry__entry__image-container animated fadeIn"
       ng-if="$ctrl.entryHelper.isImage($ctrl.entry)">
       <!-- Image -->
-      <img class="c-main__entry__image-container__image"
-      alt="{{$ctrl.entry.title}}"
-      ng-src="{{$ctrl.entryHelper.getEmbed($ctrl.entry)}}" />
+      <a href="{{$ctrl.entryHelper.getEmbed($ctrl.entry)}}">
+        <img class="c-main__entry__image-container__image"
+        alt="{{$ctrl.entry.title}}"
+        ng-src="{{$ctrl.entryHelper.getEmbed($ctrl.entry)}}" />
+      </a>
     </div>
 
     <!-- Entry Video -->
@@ -38,6 +40,14 @@
     </div>
     -->
 
-    <!-- TODO: List our categories is nice little tag looking thingys -->
-    <!-- And a nice funny little footnote -->
+    <!-- List our categories is nice little tag looking thingys -->
+    <div class="c-entry__entry__category-container">
+    Categories:
+    <div class="c-main__categories-flex">
+      <div ng-repeat="category in $ctrl.entry.categories"
+        class="c-main__categories-flex__category">
+        {{category.title}}
+      </div>
+    </div>
+  </div>
 </div>
