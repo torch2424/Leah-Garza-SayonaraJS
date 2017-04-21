@@ -1,10 +1,40 @@
 .c-main {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 
   @include element('categories-title') {
-    
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: 'Indie Flower', 'Roboto', sans-serif;
+  }
+
+  @include element('categories-flex') {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    @include element('category') {
+      background-color: $category;
+      border-radius: 5px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      cursor: pointer;
+      transition: background-color 0.5s;
+
+      @include modifier('current') {
+        background-color: $category--current;
+      }
+    }
+  }
+
+  @include element('entry-flex') {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
   }
 
   @include element('entry') {
@@ -15,6 +45,7 @@
     border-radius: 5px;
     position: relative;
     cursor: pointer;
+    z-index: 1px;
 
     @include element('image') {
       z-index: 0;
@@ -43,10 +74,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 2;
       opacity: 0;
       width: 250px;
       height: 250px;
-      z-index: 2;
       background-color: $transparent-50;
       position: absolute;
       top: 0;

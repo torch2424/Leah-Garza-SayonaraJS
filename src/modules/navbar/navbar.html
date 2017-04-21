@@ -47,6 +47,20 @@
       </div>
     </div>
 
+    <!-- Title -->
+    <div ng-if="$ctrl.navbarRouteService.title &&
+      !$ctrl.navbarRouteService.titleRoute"
+      class="angular-navbar__mobile__title">
+      {{$ctrl.navbarRouteService.title}}
+    </div>
+
+    <!-- Title Route -->
+    <div ng-if="$ctrl.navbarRouteService.titleRoute"
+      class="angular-navbar__mobile__title--route"
+      ng-click="$ctrl.goToState($ctrl.navbarRouteService.titleRoute)">
+      {{$ctrl.navbarRouteService.title}}
+    </div>
+
     <!-- Semi Transparent background -->
     <div class="angular-navbar__mobile__shade"
       ng-class="{'angular-navbar__mobile__shade--nav-active': $ctrl.showNav}"
