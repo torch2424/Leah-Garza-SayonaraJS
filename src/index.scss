@@ -1,6 +1,5 @@
 /* Import our fonts (from google Fonts) */
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-@import url('https://fonts.googleapis.com/css?family=Droid+Sans|Open+Sans|Roboto|Source+Sans+Pro|Ubuntu');
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower|Roboto:300');
 
 /* Import global styles */
 @import 'styles/variables';
@@ -23,7 +22,7 @@ html {
 }
 
 * {
-    font-family: 'Roboto','Open Sans', 'Source Sans Pro', 'Droid Sans', 'Ubuntu', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 img {

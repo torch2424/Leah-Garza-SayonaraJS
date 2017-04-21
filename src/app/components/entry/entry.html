@@ -1,28 +1,43 @@
 <div class="c-entry">
-
-  <div class="c-entry__page-content"
-    ng-if="$ctrl.sayonaraSite.pages[0].content"
-    ng-bind-html="$ctrl.$sce.trustAsHtml($ctrl.sayonaraSite.pages[0].content)">
-  </div>
-
-    <div class="c-entry__entry__title-container">
+    <!-- Entry Title -->
+    <div class="c-entry__entry__title-container animated fadeIn">
       <h1 class="c-entry__entry__title-container__title">
         {{$ctrl.entry.title}}
       </h1>
     </div>
 
-    <div class="c-entry__entry__content animated fadeIn"
+    <!-- Entry Image -->
+    <div class="c-entry__entry__image-container animated fadeIn"
+      ng-if="$ctrl.entryHelper.isImage($ctrl.entry)">
+      <!-- Image -->
+      <img class="c-main__entry__image-container__image"
+      alt="{{$ctrl.entry.title}}"
+      ng-src="{{$ctrl.entryHelper.getEmbed($ctrl.entry)}}" />
+    </div>
+
+    <!-- Entry Video -->
+    <div class="c-entry__entry__iframe-container animated fadeIn"
+      ng-if="$ctrl.entryHelper.isVideo($ctrl.entry)">
+      <iframe width="560"
+      height="315"
+      class="c-entry__entry__iframe-container__iframe"
+      ng-src="{{$ctrl.getTrustedEmbed()}}"
+      frameborder="0"
+      allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- Entry Content -->
+    <div class="c-entry__entry__content animated fadeInUp"
       ng-bind-html="$ctrl.$sce.trustAsHtml($ctrl.entry.content)">
     </div>
 
+    <!-- Omitting Dates for now, want Leah to be able to just mention it
     <div class="c-entry__entry__date">
       {{$ctrl.entry.date | date:'longDate'}}
     </div>
+    -->
 
-    <div class="c-entry__entry__back-container">
-      <div class="c-entry__entry__back-container__back"
-        ng-click="$ctrl.goBackHome()">
-        << Back
-      </div>
-    </div>
+    <!-- TODO: List our categories is nice little tag looking thingys -->
+    <!-- And a nice funny little footnote -->
 </div>

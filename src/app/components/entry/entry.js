@@ -1,3 +1,5 @@
+import EntryHelper from '../../services/entryHelper';
+
 class EntryController {
   /** @ngInject */
   constructor($log, $timeout, $state, $stateParams, $sce, sayonaraService) {
@@ -7,6 +9,8 @@ class EntryController {
     this.$stateParams = $stateParams;
     this.$sce = $sce;
     this.sayonaraService = sayonaraService;
+
+    this.entryHelper = EntryHelper;
 
     // Initialize our entry
     this.sayonaraSite = {};
@@ -39,6 +43,15 @@ class EntryController {
 
   goBackHome() {
     this.$state.go('app');
+  }
+
+  /**
+   * Funciton to get the emebed source,
+   * trust with $sce, and return
+   */
+  getTrustedEmbed() {
+    const embedUrl = this.entryHelper.getEmbed(this.entry);
+    return this.$sce.trustAsResourceUrl(embedUrl);
   }
 }
 

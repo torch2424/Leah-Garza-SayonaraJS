@@ -21,6 +21,30 @@
       }
     }
 
+    @include element('image-container') {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      @include element('image') {
+        max-width: 100%;
+      }
+    }
+
+    @include element('iframe-container') {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+
+      @include element('iframe') {
+        max-width: 100%;
+      }
+    }
+
     @include element('content') {
       margin-left: auto;
       margin-right: auto;
@@ -29,27 +53,6 @@
     @include element('date') {
       margin-top: 10px;
       text-align: right;
-    }
-
-    @include element('back-container') {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
-      margin-top: 10px;
-      margin-bottom: 20px;
-
-      @include element('back') {
-        display: inline-block;
-        color: $links;
-        transition: all 0.5s;
-
-        &:hover {
-          text-decoration: underline;
-          color: darken($links, 10%);
-          cursor: pointer;
-        }
-      }
     }
   }
 }
