@@ -81,8 +81,12 @@ class MainController {
       return;
     }
 
-    // If not, simply assign the category
-    this.currentCategory = category;
+    // If not, Clear all items, timeout,
+    // and assign the category
+    this.currentCategory = 'TIMEOUTTIMEOUTTIMEOUT';
+    this.$timeout(() => {
+      this.currentCategory = category;
+    }, 50);
   }
 }
 

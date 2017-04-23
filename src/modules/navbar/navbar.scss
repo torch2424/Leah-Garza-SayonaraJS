@@ -61,6 +61,13 @@
         font-size: 1.5em;
         cursor: pointer;
         font-family: 'Indie Flower', cursive, Arial, Helvetica, sans-serif;
+        top: 0px;
+        transition: top 0.45s;
+
+        &:hover {
+          position: relative;
+          top: -3px;
+        }
       }
     }
 
@@ -81,9 +88,16 @@
         padding-left: 0px;
         text-align: right;
         font-family: 'Indie Flower', cursive, Arial, Helvetica, sans-serif;
+        top: 0px;
+        transition: top 0.25s;
 
         &::before {
           display: none;
+        }
+
+        &:hover {
+          position: relative;
+          top: -2px;
         }
 
 

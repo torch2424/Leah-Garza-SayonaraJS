@@ -41,11 +41,14 @@
     -->
 
     <!-- List our categories is nice little tag looking thingys -->
-    <div class="c-entry__entry__category-container">
+    <div class="c-entry__entry__category-container"
+    ng-if="$ctrl.entry &&
+    $ctrl.entry.categories &&
+    $ctrl.entry.categories.length > 0">
     Categories:
     <div class="c-main__categories-flex">
       <div ng-repeat="category in $ctrl.entry.categories"
-        class="c-main__categories-flex__category">
+        class="c-main__categories-flex__category--no-hover">
         {{category.title}}
       </div>
     </div>

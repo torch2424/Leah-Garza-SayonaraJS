@@ -23,7 +23,15 @@ class EntryHelper {
 
     // Check if it contains imgur
     if (field.includes('imgur')) {
-      // TODO: Return the small image as the background style
+      // If not a gif, return a small thumbnail
+      if (!field.includes('.gif')) {
+        // Parse out the file extensions
+        let smallImgur = field.split(/\.(jpg|jpeg|tiff|png)$/i);
+        // Add the imgur size extension to the link
+        smallImgur = smallImgur[0] + 'l.' + smallImgur[1];
+        return smallImgur;
+      }
+      // If it is a gif, return the direct gif
       return field;
     }
 
@@ -61,7 +69,7 @@ class EntryHelper {
 
     // Check if it contains imgur
     if (field.includes('imgur')) {
-      // Return the small image as the background style
+      // Return the full image
       return field;
     }
 

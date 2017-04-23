@@ -21,7 +21,7 @@
   <div class="c-main__entry-flex">
     <div class="c-main__entry animated fadeInUp"
       ng-repeat="entry in $ctrl.sayonaraSite.pages[0].entryTypes[0].entries |
-      orderBy: '-date'"
+      orderBy: ['order', '-date']"
       ng-if="$ctrl.entryCategoryFilter(entry)"
       style="animation-delay: {{ (0.15 * ($index + 1)) + 's' }}">
       <!-- Background Image -->
