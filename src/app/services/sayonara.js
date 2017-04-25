@@ -16,7 +16,11 @@ class Sayonara {
     // Production and API URL from webpack config
     if (PRODUCTION) {
       // Point to prod sayonara
-      sayonaraUrlHost = '//' + this.$location.host() + this.$location.port();
+      if (this.$location.port()) {
+        sayonaraUrlHost = '//' + this.$location.host() + ':' + this.$location.port();
+      } else {
+        sayonaraUrlHost = '//' + this.$location.host();
+      }
     } else {
       // Point to Dev sayonara
       sayonaraUrlHost = API_URL;
