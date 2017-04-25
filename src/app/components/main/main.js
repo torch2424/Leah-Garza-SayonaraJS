@@ -74,19 +74,27 @@ class MainController {
    * function called whenever a category is clicked
    */
   categoryClick(category) {
+    // String to clear all categories
+    const clearCategories = 'TIMEOUTTIMEOUTTIMEOUT';
+
     // First check if we a rediabling a category
     if (this.currentCategory &&
       this.currentCategory === category) {
-      this.currentCategory = false;
+      // Clear all categories
+      this.currentCategory = clearCategories;
+      this.$timeout(() => {
+        this.currentCategory = false;
+      }, 10);
       return;
     }
 
-    // If not, Clear all items, timeout,
+    // If not, timeout,
     // and assign the category
-    this.currentCategory = 'TIMEOUTTIMEOUTTIMEOUT';
+    // Clear all categories
+    this.currentCategory = clearCategories;
     this.$timeout(() => {
       this.currentCategory = category;
-    }, 50);
+    }, 10);
   }
 }
 
