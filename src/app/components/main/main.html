@@ -1,12 +1,16 @@
 <div class="c-main">
 
   <!-- Show our categories, if we have them -->
-  <h3 class="c-main__categories-title">
+  <h3 class="c-main__categories-title"
+  ng-if="$ctrl.totalCategories &&
+  $ctrl.totalCategories.length > 0">
     Filter by category:
   </h3>
   <div class="c-main__categories-flex">
     <!-- Get our categories list, and repeat through -->
-    <div ng-repeat="category in $ctrl.totalCategories"
+    <div ng-if="$ctrl.totalCategories &&
+      $ctrl.totalCategories.length > 0"
+      ng-repeat="category in $ctrl.totalCategories"
       class="c-main__categories-flex__category"
       ng-click="$ctrl.categoryClick(category)"
       ng-class="{'c-main__categories-flex__category--current':
