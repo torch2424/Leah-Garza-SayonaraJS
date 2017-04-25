@@ -1,0 +1,5 @@
+.c-page {
+  @include element('title') {
+    margin-bottom: 10px;
+  }
+}
