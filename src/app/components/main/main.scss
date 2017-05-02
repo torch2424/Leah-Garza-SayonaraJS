@@ -1,3 +1,6 @@
+$entryWidth: 245px;
+$entryWidthMobile: 300px;
+
 .c-main {
 
   @include element('categories-title') {
@@ -23,6 +26,8 @@
       padding-right: 10px;
       margin-left: 10px;
       margin-right: 10px;
+      margin-top: 5px;
+      margin-bottom: 5px;
       cursor: pointer;
       transition: background-color 0.5s;
 
@@ -59,21 +64,31 @@
   }
 
   @include element('entry') {
-    width: 250px;
-    height: 250px;
+    width: $entryWidth;
+    height: $entryWidth;
     overflow: hidden;
     margin: 10px;
     border-radius: 5px;
     position: relative;
     cursor: pointer;
 
+    @include all-mobile() {
+      width: $entryWidthMobile;
+      height: $entryWidthMobile;
+    }
+
     @include element('image') {
       z-index: 0;
       width: 100%;
       height: auto;
-      min-width: 250px;
-      min-height: 250px;
+      min-width: $entryWidth;
+      min-height: $entryWidth;
       object-fit: cover;
+
+      @include all-mobile() {
+        min-width: $entryWidthMobile;
+        min-height: $entryWidthMobile;
+      }
 
       @include modifier('play-button') {
         position: absolute;
@@ -84,9 +99,14 @@
         z-index: 1;
         width: 100%;
         height: auto;
-        min-width: 250px;
-        min-height: 250px;
+        min-width: $entryWidth;
+        min-height: $entryWidth;
         object-fit: contain;
+
+        @include all-mobile() {
+          min-width: $entryWidthMobile;
+          min-height: $entryWidthMobile;
+        }
       }
     }
 
@@ -96,13 +116,18 @@
       justify-content: center;
       z-index: 2;
       opacity: 0;
-      width: 250px;
-      height: 250px;
+      width: $entryWidth;
+      height: $entryWidth;
       background-color: $transparent-50;
       position: absolute;
       top: 0;
       left: 0;
       transition: opacity 0.5s;
+
+      @include all-mobile() {
+        width: $entryWidthMobile;
+        height: $entryWidthMobile;
+      }
 
       &:hover {
         opacity: 1;

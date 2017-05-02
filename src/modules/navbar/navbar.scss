@@ -19,7 +19,7 @@
 }
 
 .angular-navbar {
-  width: 100%;
+  // Width Defined by app container
   background-color: $navbar;
   color: $standard;
   margin-left: auto;
@@ -217,9 +217,11 @@
         display: block;
         top: 20px;
         left: 10px;
+        padding-left: 10px;
         font-family: 'Indie Flower', cursive, Arial, Helvetica, sans-serif;
 
         @include modifier('route') {
+          padding-left: 10px;
           font-size: 1.75em;
           cursor: pointer;
           font-family: 'Indie Flower', cursive, Arial, Helvetica, sans-serif;
