@@ -15,11 +15,14 @@ class EntryHelper {
     }
 
     // Find the first field in any filled custom field
-    const field = this.getEntryField(entry);
+    let field = this.getEntryField(entry);
 
     if (!field) {
       return field;
     }
+
+    // Ensure the field is https://
+    field = field.replace('http://', 'https://');
 
     // Check if it contains imgur
     if (field.includes('imgur')) {
@@ -61,11 +64,14 @@ class EntryHelper {
     }
 
     // Find the first field in any filled custom field
-    const field = this.getEntryField(entry);
+    let field = this.getEntryField(entry);
 
     if (!field) {
       return field;
     }
+
+    // Ensure the field is https://
+    field = field.replace('http://', 'https://');
 
     // Check if it contains imgur
     if (field.includes('imgur')) {

@@ -52,6 +52,7 @@ class MainController {
     if (!this.currentCategory) {
       return true;
     }
+
     // Check if we have no categories
     if (!entry ||
       !entry.categories ||
@@ -77,6 +78,9 @@ class MainController {
     // String to clear all categories
     const clearCategories = 'TIMEOUTTIMEOUTTIMEOUT';
 
+    // Our timeout length
+    const timeoutLength = 10;
+
     // First check if we a rediabling a category
     if (this.currentCategory &&
       this.currentCategory === category) {
@@ -84,7 +88,7 @@ class MainController {
       this.currentCategory = clearCategories;
       this.$timeout(() => {
         this.currentCategory = false;
-      }, 10);
+      }, timeoutLength);
       return;
     }
 
@@ -94,7 +98,7 @@ class MainController {
     this.currentCategory = clearCategories;
     this.$timeout(() => {
       this.currentCategory = category;
-    }, 10);
+    }, timeoutLength);
   }
 }
 
