@@ -1,3 +1,5 @@
+$entryWidth: 550px;
+
 .c-entry {
 
   @include element('page-content') {
@@ -29,7 +31,8 @@
       margin-bottom: 10px;
 
       @include element('image') {
-        max-width: 100%;
+        width: 100%;
+        max-width: $entryWidth;
       }
     }
 
@@ -41,7 +44,8 @@
       margin-bottom: 10px;
 
       @include element('iframe') {
-        max-width: 100%;
+        width: 100%;
+        max-width: $entryWidth;
       }
     }
 
